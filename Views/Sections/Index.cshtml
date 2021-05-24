@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Sukurti naują", "Create")
 </p>
 <table class="table">
     <tr>
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.Module.moduleName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.sectionID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.sectionID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.sectionID })
+            @Html.ActionLink("Koreguoti", "Edit", new { id=item.sectionID }) |
+            @Html.ActionLink("Informacija", "Details", new { id=item.sectionID }) |
+            @Html.ActionLink("Ištrinti", "Delete", new { id=item.sectionID })
         </td>
     </tr>
 }

@@ -5,7 +5,7 @@
 @if (Session["admin"].Equals(true))
 {
     @Html.ActionLink("Pridėti sekciją", "Create", "Sections", new { id = ViewBag.id }, new { @class = "btn btn-success" })
-    @Html.ActionLink("Pridėti Mokinius", "addStudents", new { id = ViewBag.id }, new { @class = "btn btn-default" })
+    @Html.ActionLink("Pridėti Studentus", "addStudents", new { id = ViewBag.id }, new { @class = "btn btn-default" })
 }
 
 
@@ -27,14 +27,14 @@
     <div class="col-md-6">
         @if (Session["admin"].Equals(false))
         {
-            <h4>Pažymys: </h4>
+            <h4>Įvertinimas: </h4>
             foreach (var item in ViewBag.Students)
             {
                 if (Session["userID"].Equals(item.User.userID))
                 {
                     if (item.grade == null)
                     {
-                        <span>Pažymys neįrašytas</span>
+                        <span>Įvertinimas neįrašytas</span>
                     }
                     else
                     {
@@ -45,13 +45,13 @@
         }
         else
         {
-            <h3>Modulio mokiniai</h3>
+            <h3>Modulio Studentai</h3>
             <table class="table">
                 <tr>
                     <th>Vardas</th>
                     <th>Pavardė</th>
                     <th>El-paštas</th>
-                    <th>Pažymys</th>
+                    <th>Įvertinimas</th>
                 </tr>
                 @foreach (var item in ViewBag.Students)
                 {

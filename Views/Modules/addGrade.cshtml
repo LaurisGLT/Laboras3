@@ -1,6 +1,6 @@
 ﻿@model Labaratorinis23.Models.ModuleUser
 
-<h2>Įrašyti pažymį. @Model.User.userName @Model.User.userSurname</h2>
+<h2>Įrašyti studento įvertinimą. @Model.User.userName @Model.User.userSurname</h2>
 
 @using (Html.BeginForm())
 {
@@ -12,7 +12,7 @@
     @Html.HiddenFor(model => model.moduleID)
     @Html.HiddenFor(model => model.userID)
 
-    <p>Pažymys</p>
+    <p>Įvertinimas</p>
     <div class="form-group">
         @Html.EditorFor(model => model.grade, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.grade, "", new { @class = "text-danger" })
